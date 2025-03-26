@@ -18,3 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
  Route::get('/produtos',[ProdutosController::class, 'show'] );
+ Route::get('/produtos/novo', [ProdutosController::class, 'novo'])->name('produtos.novo');
+ Route::post('/produtos/novo', [ProdutosController::class, 'inserir'])->name('produtos.inserir');

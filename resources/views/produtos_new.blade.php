@@ -11,27 +11,18 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <h1>produtos</h1>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>TD</th>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($produtos as $produto)
-                        <tr>
-                            <td>{{ $produto->id }}</td>
-                            <td>{{ $produto->nome }}</td>
-                            <td>{{ $produto->preco }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <a href="{{route('produtos.novo')}}" class="btn btn-primary">novo</a>
-                
+                <h1>produtos (novo)</h1>
+                <form action="{{route('produtos.inserir')}}" method="post">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="preco" class="form-label">Preço</label>
+                        <input type="number" step="0.01" class="form-control" id="preco" placeholder="Preço">
+                    </div>
+                    <imput type="submit" value="Cadastrar" class="btn btn-success">Cadastrar</imput>
+                </form>
             </div>
             <div class="col-sm-2"></div>
         </div>

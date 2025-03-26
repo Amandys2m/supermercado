@@ -11,4 +11,7 @@ class ProdutosController extends Controller
         $produtos = Produto::all();
         return view('produtos_show', ['produtos' => $produtos]);
     }
+    function novo(){
+        return view('produtos_new');
+    }
 }
