@@ -34,4 +34,10 @@ class ProdutosController extends Controller
         $produto->save();
         return redirect()->route('produtos.show');
     }
+    function excluir($id){
+        $produto = Produto::findOrFail($id);
+        $produto->delete();
+
+        return redirect()->route('produtos.show');
+    }
 }
